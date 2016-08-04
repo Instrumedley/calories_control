@@ -1,0 +1,18 @@
+04.08.2016
+################################################################
+-File: /Library/Python/2.7/site-packages/registration/admin.py
+-Change: -# from django.contrib.sites.models import RequestSite
+         +from django.contrib.sites.requests import RequestSite
+-Reason: I'm using Django 1.9, different version from the one demonstrated in the Udemy
+course (1.8). This is essential modification in order for the server to run.
+
+-Improvement: This issue was fixed in version 1.3 of django-registration-redux. Upgrade!
+
+
+-File: /Library/Python/2.7/site-packages/registration/backends/default/views.py
+-Change: -# from django.contrib.sites.models import RequestSite
+         +from django.contrib.sites.requests import RequestSite
+-Reason: I'm using Django 1.9, different version from the one demonstrated in the Udemy course (1.8)
+
+-Improvement: This issue was fixed in version 1.3 of django-registration-redux. Upgrade!
+################################################################
