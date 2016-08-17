@@ -20,6 +20,8 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^$', 'calculator.views.index', name='index'),
     url(r'^accounts/', include('registration.backends.default.urls')),
-    url(r'^admin/', admin.site.urls),
     url(r'^calculator/', 'calculator.views.index', name='index'),
+    url('',  include('social.apps.django_app.urls', namespace='social')),
+    url(r'^admin/', admin.site.urls),
+
 ]
