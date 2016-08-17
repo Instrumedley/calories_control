@@ -42,7 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.staticfiles',
     'social.apps.django_app.default',
+    'compressor',
+    'bootstrap3',
+    'bootstrap_themes',
     'calculator',
+
 
 ]
 
@@ -137,6 +141,13 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+COMPRESS_ENABLED = True
+STATICFILES_FINDERS = {
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+}
 
 # Registration
 
@@ -153,3 +164,8 @@ EMAIL_HOST_PASSWORD = "Panicstation"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = "caloriescontrol@caloriescontrol.com"
+
+# Social Auth - Facebook
+
+SOCIAL_AUTH_FACEBOOK_KEY = ''
+SOCIAL_AUTH_FACEBOOK_SECRET = ''
