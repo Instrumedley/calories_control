@@ -2,4 +2,13 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'index.html')
+
+    context = {
+        'page': 'welcome to The Dietary Calculator',
+    }
+
+    request.session['location'] = "unknown"
+    if request.user.is_authenticated():
+        request.session['location'] = "Earth"
+    return render(request, 'base.html',context)
+
