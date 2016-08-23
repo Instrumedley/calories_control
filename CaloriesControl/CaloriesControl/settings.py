@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'bootstrap_themes',
     'calculator',
+    'django_extensions',
 
 
 ]
